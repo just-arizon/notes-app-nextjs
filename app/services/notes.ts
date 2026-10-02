@@ -12,7 +12,7 @@ import { notes } from "../../db/schema"
 //   },
 // ]
 
-let nextId = 4
+
 
 export const getNotes = async (importantOnly: boolean) => {
   if (importantOnly) {
