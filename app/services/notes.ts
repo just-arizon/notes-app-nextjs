@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm"
+import { eq, sql } from "drizzle-orm"
 import { db } from "../../db"
-import { notes } from "../../db/schema"
+import { notes, users } from "../../db/schema"
 
 // const notes = [
 //   { id: 1, content: "next.js utilizes React Server Components", important: true },
