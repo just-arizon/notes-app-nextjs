@@ -29,6 +29,10 @@ export const addNote = async (content: string, important: boolean) => {
     orderBy: sql`RANDOM()`,
   })
 
+    if (!user) {
+    throw new Error("Cannot create a note because no users exist")
+  }
+  
   await db.insert(notes).values({ content, important, userId: user.id })
 }
 
