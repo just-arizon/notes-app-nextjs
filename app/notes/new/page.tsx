@@ -1,4 +1,4 @@
-import { createNote } from "@/app/actions/note"
+import { createNote } from "@/app/actions/notes"
 
 const NewNote = () => {
   return (

@@ -1,5 +1,5 @@
 import { db } from "../../db"
-import { users } from "../../db/schema"
+import { notes, users } from "../../db/schema"
 import { eq } from "drizzle-orm"
 
 
@@ -12,15 +12,15 @@ export const getUserById = async (id: number) => {
   })
 }
 
-export const getNotesByUserId = async (userId: number) => {
-  return db.query.notes.findMany({
-    where: eq(notes.userId, userId),
-  })
-}
-
 export const getUserWithNotes = async (id: number) => {
   return db.query.users.findFirst({
     where: eq(users.id, id),
     with: { notes: true },
+  })
+}
+
+export const getNotesByUserId = async (userId: number) => {
+  return db.query.notes.findMany({
+    where: eq(notes.userId, userId),
   })
 }

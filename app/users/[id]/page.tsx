@@ -5,6 +5,11 @@ import { getUserWithNotes } from "../../services/users"
 const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
   const user = await getUserWithNotes(Number(id))
+  
+
+  if (!user) {
+  notFound()
+}
 
   return (
     <div>
